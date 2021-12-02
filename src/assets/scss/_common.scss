@@ -1,0 +1,63 @@
+body{
+    font-family: 'Hiragino Kaku Gothic Pro','ヒラギノ角ゴ Pro W3','メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;
+}
+
+input,button,textarea{
+    font-family: 'Hiragino Kaku Gothic Pro','ヒラギノ角ゴ Pro W3','メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;
+}
+
+.pc-only{
+    display: block!important;
+    @include media(sp){
+        display: none!important;
+    }
+}
+
+.sp-only{
+    display: none!important;
+    @include media(sp){
+        display: block!important;
+    }
+}
+
+.pc-only--inline{
+    display: inline!important;
+    @include media(sp){
+        display: none!important;
+    }
+}
+
+.sp-only--inline{
+    display: none!important;
+    @include media(sp){
+        display: inline!important;
+    }
+}
+
+.pc-only--inline-block{
+    display: inline-block!important;
+    @include media(sp){
+        display: none!important;
+    }
+}
+
+.sp-only--inline-block{
+    display: none!important;
+    @include media(sp){
+        display: inline-block!important;
+    }
+}
+
+.pc-only--flex{
+    display: flex!important;
+    @include media(sp){
+        display: none!important;
+    }
+}
+
+.sp-only--flex{
+    display: none!important;
+    @include media(sp){
+        display: flex!important;
+    }
+}

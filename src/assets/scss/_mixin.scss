@@ -1,0 +1,108 @@
+@mixin media($size, $px: false) {
+  @if ($size == 'sp') {
+    @media screen and (max-width: $breakPoint - 1) {
+      @content;
+    }
+  }
+
+  @if ($size == 'pc') {
+    @media screen and (min-width: $breakPoint) {
+      @content;
+    }
+  }
+}
+@mixin retina{
+  @media only screen and (-webkit-min-device-pixel-ratio: 2) {
+    @content;
+  }
+}
+@mixin ie{
+  @media all and (-ms-high-contrast: none) {
+    @content;
+  }
+}
+/**
+ * fz
+ */
+@mixin fz($size, $height: false, $weight: false) {
+  font-size: #{$size}px;
+
+  @if $weight {
+    font-weight: $weight;
+  }
+
+  @if $height {
+    line-height: $height / $size;
+  }
+}
+/**
+ * notfirst
+ */
+@mixin notfirst($child: false) {
+  @if ($child) {
+
+    &:not(:first-child) {
+      @content;
+    }
+  }
+
+  @else {
+
+    &:not(:first-of-type) {
+      @content;
+    }
+  }
+}
+/**
+ * placeholder
+ */
+@mixin placeholder {
+
+  &:placeholder {
+    @content;
+  }
+
+  &:placeholder-shown {
+    @content;
+  }
+
+  &::-webkit-input-placeholder {
+    @content;
+  }
+
+  &:-moz-placeholder {
+    @content;
+  }
+
+  &::-moz-placeholder {
+    @content;
+  }
+
+  &:-ms-input-placeholder {
+    @content;
+  }
+}
+/**
+ * formスタイルリセット
+ */
+@mixin formReset() {
+
+  input,
+  button,
+  textarea,
+  select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: none;
+    border: none;
+    border-radius: 0;
+    margin: 0;
+    outline: none;
+    padding: 0;
+  }
+
+  select::-ms-expand {
+    display: none;
+  }
+}
